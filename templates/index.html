@@ -82,6 +82,7 @@
 <br>
 <br>
 
+
     <div class="container-fluid">
         <!-- Example row of columns -->
         <div class="row">
@@ -91,6 +92,19 @@
         </div>
     </div>
 
+<br>
+<br>
+<br>
+
+
+    <div class="container-fluid">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="container-fluid" id="data-humidity">
+
+            </div>
+        </div>
+    </div>
 
     <script>
         var chartTemperatue;
@@ -99,7 +113,7 @@
         function requestData()
         {
             // Ajax call to get the Data from Flask
-            var requests = $.get('/data');
+            var requests = $.get('/TempHumidData');
 
             var tm = requests.done(function (result)
             {
