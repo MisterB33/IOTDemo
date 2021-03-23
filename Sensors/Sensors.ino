@@ -36,7 +36,7 @@ void setup() {
 
 void loop() {
   // Wait a few seconds between measurements.
-  delay(2000);
+  //delay(2000);
 
   // Reading temperature or humidity takes about 250 milliseconds!
   // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
@@ -54,9 +54,11 @@ void loop() {
   float hif = dht.computeHeatIndex(f, h);
   // Compute heat index in Celsius (isFahreheit = false)
   float hic = dht.computeHeatIndex(t, h, false);
-  Serial.print(t);
-  Serial.print(",");
-  Serial.print(h); 
-  Serial.println();
+  //Serial.print(t);
+  //Serial.print(",");
+  //Serial.print(h); 
+  //Serial.println();
+  Serial.println(analogRead(A0));
+  delay(100);
 }
 
