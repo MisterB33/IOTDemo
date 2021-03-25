@@ -4,13 +4,21 @@ import json
 from time import time
 from random import random
 from flask import Flask, render_template, make_response
-#from nanpy import DHT,ArduinoApi,SerialManager 
 import Sensors
 import serial 
+import os
+
 
 app = Flask(__name__) #initializing flask app class
 
-ser = serial.Serial('/dev/ttyACM0',9600) #establishing the connection on a specific serial port
+#Load the app settings from the configuration folder. Your Virtual enviroment sets which options to use.
+
+app.config.from_object(os.environ['APP_SETTINGS'])
+
+
+##ser = serial.Serial('/dev/ttyACM0',9600) #establishing the connection on a specific serial port
+
+ser ="dummy test"
 
 @app.route('/', methods=["GET", "POST"])
 def main():
@@ -19,9 +27,8 @@ def main():
 
 @app.route('/TempHumidData', methods=["GET", "POST"]) #Posting Data to graphs and guages
 def data(ser=ser):
-# Data Format
-# [TIME, Temperature, Humidity]
-	temp = Sensors.ReadDHT11(ser)#dht.readtemperature(True)    		# Printing resultant string 
+	#temp = Sensors.ReadDHT11(ser)#dht.readtemperature(True)    		# Printing resultant string 
+	temp =[1,50]
 	print(temp[0])
 	print(temp[1])
 	data = [time() * 1000, float(temp[0]),float(temp[1])]
