@@ -11,9 +11,27 @@ def ReadDHT11(ser):
         temp = ser.readline() # Read the newest line
         temp = temp.decode('UTF-8').strip()
         data = temp.split(',')
+        print(data)
+        #sleep(.1) # Delay for one tenth of a second
+        if Samps == 1:
+            Samps = 0
+            print('Posting Data..')
+            break
+    return data
+
+
+def ReadSmoke(ser):
+    Samps = 0 #Total Records
+    while True:
+        Samps +=1
+        print("connected!")
+        temp = ser.readline() # Read the newest line
+        temp = temp.decode('UTF-8').strip()
+        data = temp.split(',')
         sleep(.1) # Delay for one tenth of a second
         if Samps == 1:
             Samps = 0
             print('Posting Data..')
             break
     return data
+    
