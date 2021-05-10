@@ -22,4 +22,4 @@ class Temp_Data(db.Model): # We create the database type for python to understan
         self.temp = temp
     
     def __repr__(self):
-        return '<id{}>'.format(self.id)
+        return '<temp %r>' % self.temp

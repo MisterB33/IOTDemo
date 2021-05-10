@@ -1,5 +1,6 @@
 # This file must be used with "source bin/activate" *from bash*
 # you cannot run it directly
+# addding some stuff 
 
 deactivate () {
     # reset old environment variables
@@ -76,4 +77,4 @@ if [ -n "${BASH:-}" -o -n "${ZSH_VERSION:-}" ] ; then
 fi
 
 export APP_SETTINGS="config.DevelopmentConfig"
-export DATABASE_URL="postgresql://mbarghi:nahBRAH@localhost:5432/Sensor_Data"
+export DATABASE_URL="postgresql://mbarghi:NjU4MGIyMDAwMWVkMTljOGRhYzg2M2M0@localhost:5432/Sensor_Data"

@@ -22,7 +22,7 @@ ser = serial.Serial('/dev/ttyACM0',9600) #establishing the connection on a speci
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 
 db = SQLAlchemy(app)
-from models import Temp_Data
+#from db import Temp_Data
 
 
 @app.route('/', methods=["GET", "POST"])
